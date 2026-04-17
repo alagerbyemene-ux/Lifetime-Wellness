@@ -1,0 +1,45 @@
+{
+  "name": "AppNotification",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "title_ar": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "body_ar": {
+      "type": "string"
+    },
+    "emoji": {
+      "type": "string",
+      "default": "\ud83d\udd14"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "info",
+        "challenge",
+        "reward",
+        "system"
+      ],
+      "default": "info"
+    },
+    "read_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sent_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "body"
+  ]
+}
