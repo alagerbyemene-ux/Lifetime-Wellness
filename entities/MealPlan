@@ -1,0 +1,85 @@
+{
+  "name": "MealPlan",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "meals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "breakfast",
+              "lunch",
+              "dinner",
+              "snack"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "name_ar": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "description_ar": {
+            "type": "string"
+          },
+          "calories": {
+            "type": "number"
+          },
+          "protein_g": {
+            "type": "number"
+          },
+          "carbs_g": {
+            "type": "number"
+          },
+          "fat_g": {
+            "type": "number"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "name_ar": {
+                  "type": "string"
+                },
+                "calories": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "total_calories": {
+      "type": "number"
+    },
+    "water_goal": {
+      "type": "number",
+      "default": 8
+    }
+  },
+  "required": [
+    "user_email",
+    "date"
+  ]
+}
