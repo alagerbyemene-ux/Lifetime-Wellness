@@ -1,0 +1,111 @@
+{
+  "name": "HealthPlan",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "plan_type": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "title_ar": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_days": {
+      "type": "number"
+    },
+    "current_day": {
+      "type": "number",
+      "default": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "paused"
+      ],
+      "default": "active"
+    },
+    "days_content": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number"
+          },
+          "exercises": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "name_ar": {
+                  "type": "string"
+                },
+                "duration_min": {
+                  "type": "number"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "step_goal": {
+            "type": "number"
+          },
+          "tips": {
+            "type": "string"
+          },
+          "tips_ar": {
+            "type": "string"
+          },
+          "unlocked": {
+            "type": "boolean"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "ai_coach_messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "message_ar": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "user_email",
+    "plan_type"
+  ]
+}
