@@ -1,0 +1,83 @@
+{
+  "name": "DailyLog",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "steps": {
+      "type": "number",
+      "default": 0
+    },
+    "distance_km": {
+      "type": "number",
+      "default": 0
+    },
+    "calories_burned": {
+      "type": "number",
+      "default": 0
+    },
+    "heart_rate_avg": {
+      "type": "number"
+    },
+    "heart_rate_max": {
+      "type": "number"
+    },
+    "heart_rate_min": {
+      "type": "number"
+    },
+    "active_minutes": {
+      "type": "number",
+      "default": 0
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "great",
+        "good",
+        "okay",
+        "tired",
+        "bad"
+      ]
+    },
+    "sleep_hours": {
+      "type": "number"
+    },
+    "water_glasses": {
+      "type": "number",
+      "default": 0
+    },
+    "plan_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "exercises_done": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "duration_min": {
+            "type": "number"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_email",
+    "date"
+  ]
+}
