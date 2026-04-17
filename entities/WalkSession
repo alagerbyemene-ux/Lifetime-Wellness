@@ -1,0 +1,65 @@
+{
+  "name": "WalkSession",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "number",
+      "default": 0
+    },
+    "distance_km": {
+      "type": "number",
+      "default": 0
+    },
+    "duration_minutes": {
+      "type": "number",
+      "default": 0
+    },
+    "calories_burned": {
+      "type": "number",
+      "default": 0
+    },
+    "route_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "user_email",
+    "date"
+  ]
+}
